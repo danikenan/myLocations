@@ -5,10 +5,10 @@ export class MockedCategory {
 
     public getMockedCategory(): Category[] {
         const categoryList: Category[] = [
-            new Category(CategoryType.A),
-            new Category(CategoryType.B),
-            new Category(CategoryType.C),
-            new Category(CategoryType.D),
+            new Category(1, CategoryType.A),
+            new Category(2, CategoryType.B),
+            new Category(3, CategoryType.C),
+            new Category(4, CategoryType.D),
         ];
         return categoryList
     }

@@ -21,7 +21,7 @@ function CategoryTableComponent(props: CategosyListProps): JSX.Element {
                         <TableCell align="center">Name</TableCell>
                         <TableCell align="center"></TableCell>
                         <TableCell align="center">
-                            <Button variant="contained" onClick={props.openPopUpCategory}>Add</Button>
+                            <Button variant="contained">Add</Button>
                         </TableCell>
                     </TableRow>
                 </TableHead>

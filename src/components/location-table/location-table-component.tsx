@@ -24,7 +24,7 @@ function LocationTableComponent(props: LocationListProps): JSX.Element {
                         <TableCell align="center">Coordinates</TableCell>
                         <TableCell align="center">Category</TableCell>
                         <TableCell align="center">
-                            <Button variant="contained" onClick={props.openPopUpLocation}>Add</Button>
+                            <Button variant="contained">Add</Button>
                         </TableCell>
                     </TableRow>
                 </TableHead>

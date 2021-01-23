@@ -3,7 +3,9 @@ import Modal from '@material-ui/core/Modal';
 import { CategoryModalProps } from "./category-modal-component-props"
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-  
+import Button from '@material-ui/core/Button';
+import { Category } from "../../models/Category";
+
   function getModalStyle() {
     return {
       top: `40%`,
@@ -25,14 +27,22 @@ import TextField from '@material-ui/core/TextField';
     }),
   );
 
-function CategoryModal(props: CategoryModalProps) {
+  function CategoryModal(props: CategoryModalProps) {
     const rootRef = React.useRef<HTMLDivElement>(null);
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
+    let changedCategoryName: string | undefined = props.category?.name;
+    
+    function onChangeCategoryText(value: string): void {
+      changedCategoryName = value;
+    }
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <TextField id="time" type="time" />;
+            <TextField required id="standard-required" label="Name" defaultValue={props.category?.name} onChange={(event) => onChangeCategoryText(event.target.value)}/>
+            <Button variant="contained" color="primary" onClick={() => {if(props.category && changedCategoryName) {props.onCategoryEdited(new Category(props.category.id, changedCategoryName))}}}>
+              Submit
+            </Button>
         </div>
       );
 

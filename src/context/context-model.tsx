@@ -7,6 +7,8 @@ export class ContextModel {
         public categoryList: Category[],
         public locationList: Location[],
         public isCategoryModalVisible: boolean,
+        public isLocationModalVisible: boolean,
         public selectedCategory?: Category,
+        public selectedLocation?: Location,
     ) {}
 }

@@ -7,6 +7,7 @@ import { ContextModel } from "./context-model";
 const contextInitializer = new ContextModel(
     new MockedCategory().getMockedCategory(),
     new MockedLocation().getMockedLocation(),
+    false,
     false
 )
 
